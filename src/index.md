@@ -1,5 +1,5 @@
 ---
-title: Bearlimousine
+title: Bear Limousine
 hero:
   eyebrow: Nationwide Luxury Chauffeur Service
   heading: Arrive quietly. Arrive in something worth noticing.

@@ -7,8 +7,8 @@ hero:
     and party buses — with professional chauffeurs across 27 U.S. cities.
     Airport transfers, weddings, corporate travel, special events. Booked in
     minutes. Driven with pride.
-  image_jpg: assets/img/grand-limousine-wedding.avif
-  image_webp: assets/img/grand-limousine-wedding.avif
+  image_jpg: assets/img/hero.jpg
+  image_webp: assets/img/hero.webp
   primary_cta:
     text: Get an Instant Quote
     link: https://app.myridesync.com/quote?uid=grandlimousine

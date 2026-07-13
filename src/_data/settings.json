@@ -1,0 +1,49 @@
+{
+  "identity": {
+    "logo": "",
+    "logo_alt": "Bear Limo — Nationwide Luxury Chauffeur Network"
+  },
+  "top_bar": {
+    "phone": "(404) 424-4499",
+    "email": "info@grandlimousine.com",
+    "cta_url": "https://app.myridesync.com/quote?uid=grandlimousine"
+  },
+  "header_links": [
+    {
+      "label": "Fleet ",
+      "url": "/fleet/"
+    },
+    {
+      "label": "About",
+      "url": "/about/"
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/"
+    },
+    {
+      "label": "Terms",
+      "url": "/terms/"
+    }
+  ],
+  "footer": {
+    "explore_links": [
+      {
+        "label": "Fleet",
+        "url": "/fleet/"
+      },
+      {
+        "label": "About",
+        "url": "/about/"
+      },
+      {
+        "label": "Contact",
+        "url": "/contact/"
+      },
+      {
+        "label": "Terms",
+        "url": "/terms/"
+      }
+    ]
+  }
+}

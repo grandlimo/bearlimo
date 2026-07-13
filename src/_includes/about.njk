@@ -1,0 +1,60 @@
+---
+title: About
+permalink: /about/
+layout: base.njk
+meta_title: "About Bear Limo"  # Seed placeholders if about.seo object isn't fully loaded yet
+meta_description: "Learn about Bear Limo's premium nationwide luxury chauffeur, black car & limousine service."
+---
+
+<main id="main">
+  <section class="section" style="padding-top: clamp(40px, 6vw, 80px);">
+    <div class="container container-split" style="display: grid; grid-template-columns: 3fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start;">
+      
+      <!-- Left Column: CMS Parsed Text Layout -->
+      <div class="prose" style="max-width: 100%;">
+        <!-- FIXED: Removed "about." prefix -->
+        <span class="eyebrow" style="margin-bottom: 8px;">{{ content_blocks.eyebrow or "Who We Are" }}</span>
+        <h1 style="margin-bottom: 24px;">{{ content_blocks.h1 or "Driven by Excellence" }}</h1>
+        
+        <!-- FIXED: Removed "about." prefix -->
+        {% if content_blocks.hero_image %}
+        <figure style="margin: 0 0 40px; border: 1px solid var(--line);">
+          <img src="/{{ content_blocks.hero_image }}" alt="Bear Limo Executive Fleet" style="width: 100%; height: auto; display: block;">
+        </figure>
+        {% endif %}
+
+        <!-- FIXED: Removed "about." prefix -->
+        <div class="markdown-body">
+          {{ content_blocks.body_text | markdown | safe if content_blocks.body_text else "<p>Welcome to Bear Limo.</p>" }}
+        </div>
+      </div>
+
+      <!-- Right Column: Corporate Values Sidebar -->
+      <aside class="about-sidebar" style="display: flex; flex-direction: column; gap: 32px; position: sticky; top: 100px;">
+        <span class="eyebrow" style="color: var(--muted, #666); border-bottom: 1px solid var(--line, #eaeaea); padding-bottom: 12px; margin: 0;">Our Values</span>
+        
+        <!-- FIXED: Removed "about." prefix -->
+        {% for value in core_values %}
+          <blockquote style="margin: 0; padding: 0; {% if loop.index > 1 %}border-top: 1px solid var(--line, #eaeaea); padding-top: 24px;{% endif %}">
+            <p style="font-family: var(--f-display, sans-serif); font-size: 1.15rem; font-weight: 600; ; line-height: 1.4; margin-bottom: 8px;">{{ value.value_title }}</p>
+            <p style="font-size: 0.9rem; color: var(--muted, #666); margin: 0; line-height: 1.5;">{{ value.value_description }}</p>
+          </blockquote>
+        {% endfor %}
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- Conversion CTA -->
+  <section class="cta-band" style="text-align: center; padding: 60px 0; background: #f9f9f9;">
+    <div class="container">
+      <span class="eyebrow" style="color:#555">Secure Booking Engine</span>
+      <h2 style="margin-bottom:.35em">Experience Premium Nationwide Travel</h2>
+      <p style="max-width:52ch;margin:0 auto 32px;color:#444">Secure your vehicle instantly via our simple online reservation platform.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-solid" href="https://app.myridesync.com/quote?uid=grandlimousine" rel="noopener" target="_blank" style="background:#000;color:#fff;padding:12px 24px;text-decoration:none;">Book Online Now</a>
+        <a class="btn" href="tel:+14044244499" style="border:1px solid #000;padding:12px 24px;text-decoration:none;color:#000;">Call Support: (404) 424-4499</a>
+      </div>
+    </div>
+  </section>
+</main>

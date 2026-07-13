@@ -1,0 +1,26 @@
+<!-- One clean lookup that works for 5 pages or 500 pages -->
+{% set pageTitle = seo.meta_title or title or metadata.title or "Bear Limo — Luxury Chauffeur & Limo Service" %}
+{% set pageDesc = seo.meta_description or description or metadata.description or "Premium nationwide luxury chauffeur, black car, and limousine service." %}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="" />
+
+<!-- Standard SEO -->
+<title>{{ pageTitle }}</title>
+<meta name="title" content="{{ pageTitle }}" />
+<meta name="description" content="{{ pageDesc }}" />
+<link rel="canonical" href="https://bearlimo.com{{ page.url }}" />
+{% include "jsonLd.njk" %}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:description" content="{{ pageDesc }}" />
+<meta property="og:site_name" content="Bear Limo" />
+<meta property="og:url" content="https://bearlimo.com{{ page.url }}" />
+
+<!-- Twitter cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ pageTitle }}" />
+<meta name="twitter:description" content="{{ pageDesc }}" />

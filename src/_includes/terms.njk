@@ -1,0 +1,55 @@
+---
+title: Terms
+permalink: /terms/
+layout: base.njk
+---
+
+<main id="main">
+  <!-- Article & Testimonial Layout Split -->
+  <section class="section" style="padding-top: clamp(40px, 6vw, 80px);">
+    <div class="container" style="display: grid; grid-template-columns: 3fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start;">
+      
+      <!-- Left Column: Rich Text Content (3/4 Width) -->
+      <div class="prose" style="max-width: 100%;">
+        <span class="eyebrow" style="margin-bottom: 8px;">{{ hero.eyebrow }}</span>
+        <h1 style="margin-bottom: 24px;">{{ hero.h1 }}</h1>
+        
+        <!-- Primary Visual Content Anchor -->
+        {% if hero.image %}
+        <figure style="margin: 0 0 40px; border: 1px solid var(--line);">
+          <img src="/{{ hero.image }}" alt="{{ hero.image_alt }}" style="width: 100%; height: auto; display: block;">
+        </figure>
+        {% endif %}
+
+        <!-- Renders Markdown content block seamlessly here -->
+        {{ content | safe }}
+      </div>
+
+      <!-- Right Column: Quick Links / Policy Summary Sidebar (1/4 Width) -->
+      <aside style="display: flex; flex-direction: column; gap: 32px; position: sticky; top: 100px;">
+        <span class="eyebrow" style="color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 12px; margin: 0;">Quick Summary</span>
+        
+        {% for block in sidebar_blocks %}
+        <blockquote style="margin: 0; padding: 0; {% if not loop.first %}border-top: 1px solid var(--line); padding-top: 24px;{% endif %}">
+          <p style="font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; color: #fff; line-height: 1.4; margin-bottom: 8px;">{{ block.title }}</p>
+          <p style="font-size: 0.9rem; color: var(--muted); margin: 0; line-height: 1.5;">{{ block.text }}</p>
+        </blockquote>
+        {% endfor %}
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- Conversion CTA Powered by Grand Limousine -->
+  <section class="cta-band">
+    <div class="container">
+      <span class="eyebrow" style="color:#555">{{ cta_band.eyebrow }}</span>
+      <h2 style="margin-bottom:.35em">{{ cta_band.heading }}</h2>
+      <p style="max-width:52ch;margin:0 auto 32px;color:#444">{{ cta_band.description }}</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-solid" href="https://app.myridesync.com/quote?uid=grandlimousine" rel="noopener" target="_blank">Book Online Now</a>
+        <a class="btn" href="tel:+14044244499">Call Support: (404) 424-4499</a>
+      </div>
+    </div>
+  </section>
+</main>

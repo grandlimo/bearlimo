@@ -1,0 +1,92 @@
+---
+pagination:
+  data: collections.locations
+  size: 1
+  alias: location
+permalink: "{{ location.fileSlug }}/index.html" 
+layout: "base.njk"
+eleventyExcludeFromCollections: true
+---
+  
+  <!-- Dynamic JSON-LD Schema Data Module -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "name": "Bear Limo {{ location.data.title }}",
+    "url": "https://bearlimo.com/{{ location.fileSlug }}.html",
+    "telephone": "{{ settings.general.top_bar.phone_tel | default('(404) 424-4499') }}",
+    "priceRange": "$$$",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Grand Limousine",
+      "sameAs": "https://www.grandlimousine.com"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "{{ location.data.title }}",
+      "sameAs": "{{ location.data.seo.wiki_url }}"
+    }
+  }
+  </script>
+  <style>
+    @media (max-width: 960px) {
+      .container-split { grid-template-columns: 1fr !important; }
+      aside { position: static !important; margin-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+    <main id="main">
+      <section class="section" style="padding-top: clamp(40px, 6vw, 80px);">
+        <div class="container container-split" style="display: grid; grid-template-columns: 3fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start;">
+          
+          <!-- Left Column: CMS Parsed Text Layout -->
+         <div class="prose" style="max-width: 100%;">
+  <span class="eyebrow" style="margin-bottom: 8px;">{{ location.data.content_blocks.eyebrow }}</span>
+  <h1 style="margin-bottom: 24px;">{{ location.data.content_blocks.h1 }}</h1>
+  
+  <figure style="margin: 0 0 40px; border: 1px solid var(--line);">
+    <img src="/{{ location.data.content_blocks.hero_image }}" alt="Luxury black car service operating in {{ location.data.title }}, {{ location.data.state_abbr }}" style="width: 100%; height: auto; display: block;">
+  </figure>
+
+  <div class="markdown-body">
+    {# Every single H2 heading, paragraph, and bullet list will compile directly out of this block #}
+    {{ location.data.content_blocks.body_text | markdown | safe }}
+  </div>
+
+</div>       
+         
+
+          <!-- Right Column: Sidebar Testimonials Array -->
+          <aside style="display: flex; flex-direction: column; gap: 32px; position: sticky; top: 100px;">
+            <span class="eyebrow" style="color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 12px; margin: 0;">Reviews</span>
+            
+            {% for review in location.data.reviews %}
+              <blockquote style="margin: 0; padding: 24px 0 0; {% if loop.index > 1 %}border-top: 1px solid var(--line);{% endif %}">
+                <p style="font-family: var(--f-display); font-size: 1.15rem; font-style: italic; line-height: 1.4; margin-bottom: 12px;">"{{ review.quote }}"</p>
+                <cite style="font-style: normal; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);">— {{ review.reviewer_name }}</cite>
+              </blockquote>
+            {% endfor %}
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- Conversion Action Block -->
+      <section class="cta-band">
+        <div class="container">
+          <span class="eyebrow" style="color:#555">Secure Booking Engine</span>
+          <h2 style="margin-bottom:.35em">Experience {{ location.data.title }}'s Finest Livery Service</h2>
+          <p style="max-width:52ch;margin:0 auto 32px;color:#444">Secure your vehicle instantly via our simple online reservation platform. Rates are transparently calculated and managed by Grand Limousine dispatch systems.</p>
+          <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-solid" href="{{ settings.general.top_bar.booking_url }}" rel="noopener" target="_blank">Book Online Now</a>
+            <a class="btn" href="tel:{{ settings.general.top_bar.phone_tel }}">Call Support: {{ settings.general.top_bar.phone_display }}</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+
+</body>
+</html>

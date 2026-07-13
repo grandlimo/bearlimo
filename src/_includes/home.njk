@@ -1,0 +1,334 @@
+---
+title: "Home Page"
+layout: base.njk
+
+---
+
+  <main id="main">
+      <section class="hero" aria-label="Bear Limo hero">
+        <div class="hero-media" aria-hidden="true">
+      <picture>
+        {# Checks if a webp version exists, otherwise falls back dynamically #}
+        {% if hero.image_webp %}
+          <source srcset="{{ hero.image_webp }}" type="image/webp">
+        {% endif %}
+        <img src="{{ hero.image_jpg | default('assets/img/hero.jpg') }}" 
+             alt="Black stretch limousine on a wet nighttime city street" 
+             width="1920" 
+             height="1080" 
+               loading="eager"
+             fetchpriority="high" 
+             decoding="async">
+      </picture>
+
+        </div>
+        <div class="container hero-inner">
+          <span class="hero-eyebrow">{{hero.eyebrow}}</span>
+          <h1>{{ hero.heading}}</h1>
+          <p class="hero-sub">{{ hero.subtext}}</p>
+          <div class="hero-cta">
+          {% if hero.primary_cta.link %}
+            <a class="btn btn-solid" href="{{ hero.primary_cta.link }}" rel="noopener" target="_blank">{{ hero.primary_cta.text | default('Get an Instant Quote') }}</a>
+            {% endif %}
+            {% if hero.secondary_cta.link %}
+            <a class="btn" href=" {{ hero.secondary_cta.link }}">{{ hero.secondary_cta.text | default('Explore the Fleet') }}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">Scroll</div>
+      </section>
+
+
+      <style>
+        /* Container Layout */
+.hero-intro-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  text-align: left; /* Change to center if you want a centered hero alignment */
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Controls the tight spacing between headings */
+}
+
+/* Small Top Heading Styling */
+.top-subheading {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin: 0;
+  color: #666; /* Subtle grey for semantic separation, or remove to inherit */
+}
+
+/* Big Main Heading Styling */
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: inherit; /* No color added */
+}
+
+/* Description Styling */
+.section-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Link Styling */
+
+
+a.accent-link {
+  color: #d32f2f; /* Red accent option if needed */
+}
+
+/* Responsive Scaling */
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 1.9rem;
+  }
+}
+      </style>
+     <section class="hero-intro-section" aria-labelledby="main-section-heading">
+  <div class="header-container">
+    <!-- Small Top Heading (Eyebrow text for context) -->
+    <h3 class="top-subheading">{{ intro.eyebrow | default('Trending Insights') }}</h3>
+    
+    <!-- Big Main Heading -->
+    <h2 id="main-section-heading" class="main-heading">
+      {{ intro.heading | default('Chauffeur-Driven Luxury') }}
+    </h2>
+    
+    <!-- Description Paragraph with Link -->
+    <p class="section-description">
+      {{ intro.description }}
+      {% if intro.link_url and intro.link_text %}
+        <a href="{{ intro.link_url }}" class="accent-link">{{ intro.link_text }}</a>
+      {% endif %}
+    </p>
+  </div>
+</section>
+
+    <!-- SEO Core Copy Pillar Block -->
+<!-- SEO Core Copy Pillar Block -->
+<section class="section" style="padding: clamp(40px, 6vw, 80px) 0; border-bottom: 1px solid var(--line, #eaeaea);">
+  <div class="container" style="max-width: 800px; margin: 0 auto;">
+    
+    <!-- Header Block -->
+    <div style="margin-bottom: 40px; text-align: left;">
+      <span class="eyebrow" style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; font-weight: 700; color: var(--muted, #666);">
+        {{ seo_block.eyebrow  }}
+      </span>
+      <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); line-height: 1.15; font-weight: 700; margin: 8px 0 20px;">
+        {{ seo_block.heading }}
+      </h2>
+      <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5em;">
+        {# Note: If they write markdown links here, using the raw filter allows standard HTML rendering #}
+        {{ seo_block.intro_text | safe }}
+      </p>
+    </div>
+
+    <!-- Dynamic Highlights Loop -->
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+      {% for pillar in seo_block.pillars %}
+        <div>
+          <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 12px;">
+            {{ pillar.title }}
+          </h3>
+          <p style="line-height: 1.6; margin: 0;">
+            {{ pillar.body }}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- SEO Tip: Use a semantic container with a descriptive ID or class -->
+ <style>
+  /* Layout Styling */
+.split-layout {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.column-left {
+  flex: 2; /* Takes up 2/3 of the width */
+}
+
+.column-right {
+  flex: 1; /* Takes up 1/3 of the width */
+}
+
+/* Typography & Color Rules */
+h2, h3 {
+  color: inherit; /* No color added; inherits default text color */
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit; /* Standard links do not add color */
+
+}
+
+/* Explicit exception rule for red links */
+a.accent-link {
+  color: #d32f2f; /* Solid, accessible red color */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .split-layout {
+    flex-direction: column;
+  }
+}
+ </style>
+
+<section class="split-layout" aria-label="Primary Content and Resources">
+  
+  <!-- Left Side: Main Content Column -->
+  <div class="column-left">
+    <h2>{{ split_section.left_heading | default('Main Article or Core Topic Heading') }}</h2>
+    <div class="markdown-content">
+      {# Using the | safe filter since the markdown widget creates HTML outputs #}
+      {{ split_section.left_body | safe }}
+    </div>
+  </div>
+
+  <!-- Right Side: Sidebar Resources Column -->
+  <aside class="column-right">
+    <h3>{{ split_section.right_heading | default('Related Resources') }}</h3>
+    
+    <ul>
+      {% for link in split_section.sidebar_links %}
+        <li>
+          <a href="{{ link.url }}" {% if link.is_accent %}class="accent-link"{% endif %}>
+            {{ link.label }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+</section>
+      
+     <section class="section" aria-labelledby="services">
+  <div class="container">
+    
+    <!-- Section Head Elements -->
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ services_section.eyebrow | default('Services') }}</span>
+      <h2 id="services">{{ services_section.heading | default("Wherever you're headed, in style.") }}</h2>
+      <p>{{ services_section.description | default('A general-purpose luxury chauffeur network built to handle everything.') }}</p>
+    </div>
+    
+    <!-- Loop Through Service Grid Cards -->
+   <div class="grid grid-3">
+  {% for card in services_section.cards %}
+    
+    {# 1. Strict slug-to-slug verification #}
+    {% set service_exists = false %}
+    {% set target_slug = "" %}
+    
+    {# Convert card title to a clean slug (e.g., "airport-transfers") #}
+    {% set card_slug = card.title | slugify %}
+
+    {% for item in collections.all %}
+      {% set item_title_slug = item.data.title | slugify | default('') %}
+      {% set item_frontmatter_slug = item.data.slug | slugify | default('') %}
+      {% set item_file_slug = item.fileSlug | slugify | default('') %}
+
+      {# Check if the card slug matches the title, front matter slug, or filename slug #}
+      {% if (card_slug == item_title_slug) or 
+            (card_slug == item_frontmatter_slug) or 
+            (card_slug == item_file_slug) or
+            (card_slug ~ "s" == item_file_slug) or
+            (item_file_slug ~ "s" == card_slug) %}
+        {% set service_exists = true %}
+        {# Save the exact slug of the matching file #}
+        {% set target_slug = item_file_slug %}
+      {% endif %}
+    {% endfor %}
+
+    <article class="card reveal">
+      <div class="card-icon">{{ card.icon_letter | default('•') }}</div>
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.body }}</p>
+      
+      {# 2. Correct URL routing: Forces root level path format /slug/ #}
+      {% set root_url = "/" ~ target_slug ~ "/" %}
+      <a href="{{ root_url if service_exists else '#' }}">Learn more →</a>
+    </article>
+  {% endfor %}
+</div>
+</section>
+
+<section class="section" aria-labelledby="locations">
+  <div class="container">
+    
+    <!-- Section Header Layout -->
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ coverage_section.eyebrow | default('Coverage') }}</span>
+      <h2 id="locations">{{ coverage_section.heading | default('27 cities. One phone number.') }}</h2>
+      <p>{{ coverage_section.description | default('From Atlanta to Houston, Miami to Nashville — dispatch is local, standards are national.') }}</p>
+    </div>
+    
+    <!-- Dynamic Responsive Locations Navigation Grid -->
+    <nav class="loc-grid reveal" aria-label="All service locations">
+   
+  {% for loc in coverage_section.locations %}
+    
+    {# 1. Check if a page with this city title actually exists #}
+    {% set page_exists = false %}
+    
+    {% for item in collections.all %}
+      {% if item.data.title | lower == loc.city_name | lower %}
+        {% set page_exists = true %}
+      {% endif %}
+    {% endfor %}
+
+    {# 2. If it exists, force the clean root URL path. If not, lock it with '#' #}
+    {% set clean_url = "/" ~ loc.city_name | slugify ~ "/" %}
+
+    <a href="{{ clean_url if page_exists else '#' }}">
+      {{ loc.city_name }}
+    </a>
+
+  {% endfor %}
+</nav>
+   
+
+  </div>
+</section>
+
+     <section class="cta-band">
+  <div class="container">
+    <span class="eyebrow" style="color:#555">{{ cta_band.eyebrow | default('Reserve') }}</span>
+    <h2 style="margin-bottom:.35em">{{ cta_band.heading | default('Ready when you are.') }}</h2>
+    <p style="max-width:52ch;margin:0 auto 32px;color:#444">
+      {{ cta_band.description | default('Instant online quote, or call around the clock.') }}
+    </p>
+    
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      {# Pulls from your existing global settings fields if available, otherwise falls back to defaults #}
+      <a class="btn btn-solid" href="{{ settings.general.quote_url | default('https://app.myridesync.com/quote?uid=grandlimousine') }}" rel="noopener" target="_blank">
+        Get an Instant Quote
+      </a>
+      <a class="btn" href="tel:{{ settings.general.phone_tel | default('+14044244499') }}">
+        {{ settings.general.phone | default('Call (404) 424-4499') }}
+      </a>
+    </div>
+  </div>
+</section>
+    </main>
+

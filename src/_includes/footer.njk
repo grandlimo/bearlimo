@@ -1,0 +1,48 @@
+    
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="brand" style="margin-bottom:16px">
+              <span class="brand-mark" aria-hidden="true"></span>
+              <span>BEAR&nbsp;LIMO</span>
+            </div>
+            <p>Nationwide luxury chauffeur, black car & limousine service. Airport transfers, weddings, corporate travel and special events — reserved in minutes, driven with pride.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+         {# Loops through the clean settings file to ensure root paths like /fleet/ are always correct #}
+  {% for item in settings.footer.explore_links %}
+    <li>
+      <a href="{{ item.url }}">
+        {{ item.label }}
+      </a>
+    </li>
+  {% endfor %}
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:+14044244499">(404) 424-4499</a></li>
+              <li><a href="mailto:info@grandlimousine.com">info@grandlimousine.com</a></li>
+              <li>32 Peachtree St NW, Atlanta, GA</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Book</h4>
+            <ul>
+              <li><a href="https://app.myridesync.com/quote?uid=grandlimousine" rel="noopener" target="_blank">Instant Quote</a></li>
+              <li><a href="https://www.grandlimousine.com/" rel="noopener" target="_blank">Reserve Online</a></li>
+              <li><a href="https://www.grandlimousine.com/reviews/" rel="noopener" target="_blank">Reviews</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© <span data-year>2026</span> Bear Limo. All rights reserved.</div>
+          <div>Reservations powered by Grand Limousine.</div>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/js/main.js" defer></script>

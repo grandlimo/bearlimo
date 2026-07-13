@@ -1,0 +1,45 @@
+---
+title: Fleet
+permalink: /fleet/
+layout: base.njk
+
+---
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">{{ hero.eyebrow or "Fleet" }}</span>
+      <h1>{{ hero.h1 or "Our Premium Fleet" }}</h1>
+      <p>{{ hero.text }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="fleet-grid">
+        {% for vehicle in fleet_list %}
+          <article class="fleet-card reveal">
+            <figure>
+              <picture>
+                <source srcset="/{{ vehicle.image }}.webp" type="image/webp">
+                <img src="/{{ vehicle.image }}.jpg" alt="{{ vehicle.alt }}" loading="lazy" width="1200" height="800">
+              </picture>
+            </figure>
+            <div class="fleet-card-body">
+              <h3>{{ vehicle.name }}</h3>
+              <p>{{ vehicle.passengers }}. {{ vehicle.models }}. {{ vehicle.price }}.</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Match a vehicle to your occasion.</h2>
+      <p style="max-width:48ch;margin:0 auto 28px;color:#444">Tell us the group size and the trip. We'll recommend the vehicle.</p>
+      <a class="btn btn-solid" href="https://app.myridesync.com/quote?uid=grandlimousine" rel="noopener" target="_blank">Get an Instant Quote</a>
+    </div>
+  </section>
+</main>

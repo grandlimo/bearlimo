@@ -1,0 +1,40 @@
+---
+title: Contact
+permalink: /contact/
+layout: base.njk
+
+---
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">{{ hero.eyebrow }}</span>
+      <h1>{{ hero.h1 }}</h1>
+      <p>{{ hero.subtext }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <dl class="contact-info">
+          <div><dt>24/7 Dispatch</dt><dd><a href="{{ contact_info.phone_link }}">{{ contact_info.phone }}</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></dd></div>
+          <div><dt>Head Office</dt><dd>{{ contact_info.address | safe }}</dd></div>
+          <div><dt>Coverage</dt><dd>27 U.S. cities — <a href="{{ contact_info.coverage_link }}" style="border-bottom:1px solid #fff">see the list</a></dd></div>
+        </dl>
+        <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-solid" href="https://app.myridesync.com/quote?uid=grandlimousine" rel="noopener" target="_blank">Instant Online Quote</a>
+          <a class="btn" href="{{ contact_info.phone_link }}">Call Now</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <figure style="margin:0">
+          <picture>
+            <source srcset="/{{ hero_image.webp }}" type="image/webp">
+            <img src="/{{ hero_image.jpg }}" alt="{{ hero_image.alt }}" loading="lazy" width="1600" height="1000">
+          </picture>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>

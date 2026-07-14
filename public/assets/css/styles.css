@@ -32,7 +32,7 @@ p{margin:0 0 1em;color:#d8d8d8}
 
 /* Optional: Add a smooth hover state change for better user experience */
 .markdown-body p a:hover {
-      color: #ff5252
+      color: #FBBF24
  !important; /* Darkens slightly when hovered */
   text-decoration: none;
 }

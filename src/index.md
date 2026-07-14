@@ -96,7 +96,7 @@ services_section:
         appointments, city tours.
 cta_band:
   eyebrow: Reserve
-  heading: Ready when you are.
+  heading: '"We Bear You to try us" Since 2007'
   description: Instant online quote, or call around the clock. Booking early is
     smart during holidays, prom and wedding season.
 layout: home.njk

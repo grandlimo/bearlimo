@@ -142,7 +142,7 @@ p{margin:0 0 1em;color:#d8d8d8}
 .cta-band .btn-solid:hover{background:transparent;color:#000}
 .footer{padding:64px 0 32px;border-top:1px solid var(--line);font-size:.9rem;color:#a0a0a0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
-.footer h4{font-family:var(--f-sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;margin:0 0 16px}
+.footer h3{font-family:var(--f-sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;margin:0 0 16px}
 .footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 .footer a:hover{color:#fff}
 .footer-bottom{padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem}

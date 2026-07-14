@@ -1,12 +1,11 @@
 ---
-title: Bearlimousine
+title: Bear Limo | Luxury Limo & Airport Black Car Service
 hero:
-  eyebrow: Nationwide Luxury Chauffeur Service
-  heading: Arrive quietly. Arrive in something worth noticing.
-  subtext: Bear Limo pairs a modern black-fleet — sedans, SUVs, stretch limousines
-    and party buses — with professional chauffeurs across 27 U.S. cities.
-    Airport transfers, weddings, corporate travel, special events. Booked in
-    minutes. Driven with pride.
+  eyebrow: Premium Limo & Black Car Service "BEAR"
+  heading: Bear Limo Service & 24/7 Airport Transportation
+  subtext: Private limo and black car service with on‑time airport rides, clean
+    luxury vehicles, professional chauffeurs, and flat‑rate pricing from booking
+    to drop‑off.
   image_jpg: assets/img/hero.jpg
   image_webp: assets/img/hero.webp
   primary_cta:
@@ -16,13 +15,15 @@ hero:
     text: Explore the Fleet
     link: fleet.html
 intro:
-  eyebrow: Trending Insights
-  heading: Chauffeur-Driven Luxury
-  description: "Experience seamless ground transportation with our fleet of
-    meticulously maintained luxury sedans, SUVs, and stretch limousines. From
-    prompt airport transfers to elegant wedding day transport, our professional
-    chauffeurs ensure safety, privacy, and unparalleled punctuality. Book your
-    ride today or explore our "
+  eyebrow: 24/7 Airport, Corporate & Event Transportation
+  heading: Luxury Limo Service & 24/7 Airport Transportation
+  description: When you book with Bear Limo, you get more than just a ride—you get
+    a private chauffeur who arrives on time, drives professionally, and keeps
+    your trip stress‑free from pickup to drop‑off. Our luxury sedans, SUVs, and
+    limousines handle airport transfers, corporate travel, and special events
+    with clean vehicles, flat‑rate pricing, and discreet service. Reserve in
+    seconds online or by phone and step into a comfortable car that is ready
+    when you are, day or night.
   link_text: luxury fleet options
   link_url: /fleet
 seo_block:
@@ -44,14 +45,14 @@ seo_block:
         our direct connection with the Grand Limousine scheduling matrix feature
         all-inclusive initial layouts...
 split_section:
-  left_heading: Main Article or Core Topic Heading
-  left_body: >
-    This is the content area where you place your high-quality, keyword-rich
-    text. To maximize SEO performance, keep paragraphs digestible and use
-    natural phrasing.
-
-
-    If you need to draw user attention to a specific call-to-action or high-priority internal link, you can use the urgent accent selector.
+  left_heading: Why Bear Luxury Limo Service Is the Smartest Way to Travel to the
+    Airport and Beyond
+  left_body: Getting to and from the airport should not feel like the hardest part
+    of your trip. Between traffic, parking, unpredictable rideshares, and tight
+    flight schedules, travel days can become stressful before you even check in.
+    Bear Limo replaces that chaos with a private chauffeur, a clean luxury
+    vehicle, and a precise schedule, so every ride feels calm, predictable, and
+    on your terms
   right_heading: Related Resources
   sidebar_links:
     - label: Deep Dive Resource One
@@ -95,7 +96,7 @@ services_section:
         appointments, city tours.
 cta_band:
   eyebrow: Reserve
-  heading: Ready when you are.
+  heading: '"We Bear You to try us" Since 2007'
   description: Instant online quote, or call around the clock. Booking early is
     smart during holidays, prom and wedding season.
 layout: home.njk

@@ -45,7 +45,7 @@ seo_block:
         our direct connection with the Grand Limousine scheduling matrix feature
         all-inclusive initial layouts...
 split_section:
-  left_heading: Why a Luxury Limo Service Is the Smartest Way to Travel to the
+  left_heading: Why Bear Luxury Limo Service Is the Smartest Way to Travel to the
     Airport and Beyond
   left_body: >-
     Getting to and from the airport should not feel like the hardest part of

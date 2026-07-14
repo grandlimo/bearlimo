@@ -288,7 +288,7 @@ collections:
         fields:
           - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Main Header (H1)", name: "h1", widget: "string" }
-          - { label: "Hero Image", name: "hero_image", widget: "image", default: "assets/img/hero.jpg" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", default: "/src/assets/img/hero-location.jpg" }
           - { label: "Body Text Content", name: "body_text", widget: "markdown", minimal: true }
 
       # --- Sidebar Testimonials Array ---
@@ -333,8 +333,8 @@ collections:
         fields:
           - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Main Header (H1)", name: "h1", widget: "string" }
-          - { label: "Hero Body Image (JPG)", name: "hero_image", widget: "image" }
-          - { label: "Hero Body Image (WebP)", name: "hero_image_webp", widget: "image" }
+          - { label: "Hero Body Image (JPG)", name: "hero_image", widget: "image",  default: "/src/assets/img/hero-location.jpg" }
+          - { label: "Hero Body Image (WebP)", name: "hero_image_webp", widget: "image",default: "/src/assets/img/hero-location.webp" }
           
           # --- Clean Markdown Editor Box ---
           - label: "Introductory Body Paragraphs"

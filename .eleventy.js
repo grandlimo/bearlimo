@@ -1,9 +1,10 @@
 const MarkdownIt = require("markdown-it");
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+
 const markdownItAnchor = require("markdown-it-anchor");
 const { DateTime } = require("luxon");
 module.exports = function(eleventyConfig){
- eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+
+
 // Configure markdown parsing options to match professional agency templates
 const markdownLibrary = MarkdownIt({
  html: true,      // Ensures inline HTML elements pass through cleanly

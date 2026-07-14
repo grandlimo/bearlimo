@@ -15,13 +15,15 @@ hero:
     text: Explore the Fleet
     link: fleet.html
 intro:
-  eyebrow: Trending Insights
-  heading: Chauffeur-Driven Luxury
-  description: Experience seamless ground transportation with our fleet of
-    meticulously maintained luxury Tesla X, SUVs, and Sprinter limousines. From
-    prompt airport transfers to elegant wedding day transport, our professional
-    chauffeurs ensure safety, privacy, and unparalleled punctuality. Book your
-    ride today or explore our Limo Services.
+  eyebrow: 24/7 Airport, Corporate & Event Transportation
+  heading: Luxury Limo Service & 24/7 Airport Transportation
+  description: When you book with Bear Limo, you get more than just a ride—you get
+    a private chauffeur who arrives on time, drives professionally, and keeps
+    your trip stress‑free from pickup to drop‑off. Our luxury sedans, SUVs, and
+    limousines handle airport transfers, corporate travel, and special events
+    with clean vehicles, flat‑rate pricing, and discreet service. Reserve in
+    seconds online or by phone and step into a comfortable car that is ready
+    when you are, day or night.
   link_text: luxury fleet options
   link_url: /fleet
 seo_block:

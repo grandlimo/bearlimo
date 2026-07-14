@@ -46,9 +46,18 @@ eleventyExcludeFromCollections: true
   <span class="eyebrow" style="margin-bottom: 8px;">{{ location.data.content_blocks.eyebrow }}</span>
   <h1 style="margin-bottom: 24px;">{{ location.data.content_blocks.h1 }}</h1>
   
-  <figure style="margin: 0 0 40px; border: 1px solid var(--line);">
-    <img src="/{{ location.data.content_blocks.hero_image }}" alt="Luxury black car service operating in {{ location.data.title }}, {{ location.data.state_abbr }}" style="width: 100%; height: auto; display: block;">
-  </figure>
+<figure style="margin: 0 0 40px; border: 1px solid var(--line);">
+  <img
+  src="/{{ location.data.content_blocks.hero_image }}"
+  alt="Luxury black car service operating in {{ location.data.title }}, {{ location.data.state_abbr }}"
+  width="1920"
+  height="1080"
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+  style="width:100%;height:auto;display:block;"
+>
+</figure>
 
   <div class="markdown-body">
     {# Every single H2 heading, paragraph, and bullet list will compile directly out of this block #}

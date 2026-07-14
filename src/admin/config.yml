@@ -185,7 +185,7 @@ collections:
             fields:
               - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Main Header (H1)", name: "h1", widget: "string" }
-              - { label: "Hero Image", name: "hero_image", widget: "image", default: "assets/img/hero.jpg" }
+              - { label: "Hero Image", name: "hero_image", widget: "image", default: "assets/img/hero-location.jpg" }
               - { label: "Body Text Content", name: "body_text", widget: "markdown" }
 
           # --- Sidebar Core Values ---
@@ -319,7 +319,7 @@ collections:
         fields:
           - { label: "Meta Title Override", name: "meta_title", widget: "string" }
           - { label: "Meta Description", name: "meta_description", widget: "text" }
-          - { label: "Airport Code Served", name: "airport_code", widget: "string", hint: "e.g., ALB, ATL, IAH" }
+          
           - { label: "Wikipedia URL Reference", name: "wiki_url", widget: "string", hint: "Used for structured Schema validation" }
 
       # --- Main Layout Body Content ---

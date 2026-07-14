@@ -1,12 +1,11 @@
 ---
-title: Bear Limousine
+title: City Limo & Black Car Service | 24/7 Airport Rides – BEAR Limo
 hero:
-  eyebrow: Nationwide Luxury Chauffeur Service "BEAR"
-  heading: Arrive quietly. Arrive in something worth noticing.
-  subtext: Bear Limo pairs a modern black fleet — Tesla X, SUVs, Sprinter
-    limousines and party buses — with professional chauffeurs across 27 U.S.
-    cities. Airport transfers, weddings, corporate travel, special events.
-    Booked in minutes. Driven with pride.
+  eyebrow: Premium Limo & Black Car Service "BEAR"
+  heading: City Limo Service & 24/7 Airport Transportation
+  subtext: Private limo and black car service with on‑time airport rides, clean
+    luxury vehicles, professional chauffeurs, and flat‑rate pricing from booking
+    to drop‑off.
   image_jpg: assets/img/hero.jpg
   image_webp: assets/img/hero.webp
   primary_cta:

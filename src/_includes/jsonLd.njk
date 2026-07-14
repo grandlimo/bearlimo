@@ -1,69 +1,107 @@
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {# 1. Global Breadcrumb Tracking #}
+  "@context":"https://schema.org",
+  "@graph":[
+
+{% if page.url == "/" %}
+{
+  "@type":"WebSite",
+  "@id":"https://bearlimo.com/#website",
+  "url":"https://bearlimo.com/",
+  "name":"Bear Limo"
+},
+{% endif %}
+
+{% if service %}
+
+{
+  "@type":"Service",
+  "@id":"https://bearlimo.com{{ page.url }}#service",
+  "name":"{{ service.data.title }}",
+  "url":"https://bearlimo.com{{ page.url }}",
+  "description":"{{ service.data.seo.meta_description }}",
+  "provider":{
+    "@type":"TaxiService",
+    "@id":"https://bearlimo.com/#business"
+  }
+},
+
+{% else %}
+
+{
+  "@type":"LocalBusiness",
+  "@id":"https://bearlimo.com/#business",
+
+  {% if location %}
+  "name":"Bear Limo – {{ location.data.title }}",
+  {% else %}
+  "name":"Bear Limo",
+  {% endif %}
+
+  "url":"https://bearlimo.com{{ page.url }}",
+
+  "telephone":"{{ settings.top_bar.phone }}",
+  "email":"{{ settings.top_bar.email }}",
+  "priceRange":"$$$",
+
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"32 Peachtree St NW",
+    "addressLocality":"Atlanta",
+    "addressRegion":"GA",
+    "postalCode":"30303",
+    "addressCountry":"US"
+  },
+
+  "image":"https://bearlimo.com/assets/img/hero.webp"
+}
+
+  {% if location %}
+  "areaServed":{
+      "@type":"City",
+      "name":"{{ location.data.title }}"
+  },
+  {% else %}
+  "areaServed":[
+      {% for city in collections.locations %}
+      {
+        "@type":"City",
+        "name":"{{ city.data.title }}"
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+  ],
+  {% endif %}
+
+  "image":"https://bearlimo.com/assets/img/hero.webp"
+},
+
+{% endif %}
+
+{
+  "@type":"BreadcrumbList",
+  "@id":"https://bearlimo.com{{ page.url }}#breadcrumb",
+  "itemListElement":[
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://bearlimo.com{{ page.url }}#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://bearlimo.com/"
-        }
-        {% if page.url != "/" %},
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "{{ title | safe }}",
-          "item": "https://bearlimo.com{{ page.url }}"
-        }
-        {% endif %}
-      ]
-    },
-    
-    {# 2. Main Corporate Profile #}
-    {
-      "@type": "TaxiService",
-      "@id": "https://bearlimo.com/#localbusiness",
-      {# Checks for your exact layout name here #}
-      "name": "Bear Limo {% if layout == 'locations-page.njk' %}— {{ title }}{% endif %}",
-      "url": "https://bearlimo.com/",
-      "image": ["https://www.bearlimo.com/assets/img/hero.webp"],
-      "telephone": "{{ settings.top_bar.phone or '(404) 424-4499' }}",
-      "email": "{{ settings.top_bar.email or 'info@bearlimo.com' }}",
-      "priceRange": "$$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "32 Peachtree St NW",
-        "addressLocality": "Atlanta",
-        "addressRegion": "GA",
-        "postalCode": "30303",
-        "addressCountry": "US"
-      },
-      "areaServed": [
-        {%- set first = true -%}
-        {%- for city in collections.all -%}
-          {# Updated loop to dynamically look for locations-page.njk layout #}
-          {%- if city.data.layout == "locations-page.njk" -%}
-            {%- if not first -%},{%- endif -%}
-            { "@type": "City", "name": "{{ city.data.title }}" }
-            {%- set first = false -%}
-          {%- endif -%}
-        {%- endfor -%}
-      ]
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://bearlimo.com/"
     }
-    {% if layout == "services-page.njk" %},
+
+    {% if page.url != "/" %}
+
+    ,
     {
-      "@type": "Service",
-      "serviceType": "{{ title }}",
-      "url": "https://bearlimo.com{{ page.url }}", 
-      "provider": { "@id": "https://bearlimo.com/#localbusiness" },
-      "description": "{{ seo.meta_description or description or 'Premium luxury transportation.' }}"
+      "@type":"ListItem",
+      "position":2,
+      "name":"{{ title }}",
+      "item":"https://bearlimo.com{{ page.url }}"
     }
+
     {% endif %}
   ]
+}
+
+]
 }
 </script>

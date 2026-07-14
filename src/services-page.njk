@@ -8,22 +8,7 @@ layout: "base.njk"
 eleventyExcludeFromCollections: true
 ---
 
-  <!-- Dynamic JSON-LD Schema Data Module -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TaxiService",
-    "name": "Bear Limo {{ service.data.title }}",
-    "url": "https://bearlimo.com/{{ service.fileSlug }}.html",
-    "telephone": "{{ settings.general.top_bar.phone_tel | default('(404) 424-4499') }}",
-    "priceRange": "$$$",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Grand Limousine",
-      "sameAs": "https://www.grandlimousine.com"
-    }
-  }
-  </script>
+
   <style>
     @media (max-width: 960px) {
       .container-split { grid-template-columns: 1fr !important; }

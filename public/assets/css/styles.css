@@ -41,6 +41,19 @@ p{margin:0 0 1em;color:#d8d8d8}
 .skip-link{position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:10px 16px;z-index:100}
 .skip-link:focus{left:12px;top:12px}
 .header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+ width: 28px;
+  height: 28px;
+  padding: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
 .brand{font-family:var(--f-display);font-size:1.4rem;letter-spacing:.02em;font-weight:700;display:flex;align-items:center;gap:10px}
 .brand-mark{display:inline-block;width:28px;height:28px;border:2px solid #fff;border-radius:50%;position:relative}

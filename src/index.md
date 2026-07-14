@@ -1,5 +1,5 @@
 ---
-title: City Limo & Black Car Service | 24/7 Airport Rides – BEAR Limo
+title: Bear Limo & Black Car Service | 24/7 Airport Rides – BEAR Limo
 hero:
   eyebrow: Premium Limo & Black Car Service "BEAR"
   heading: Bear Limo Service & 24/7 Airport Transportation
@@ -52,7 +52,7 @@ split_section:
     flight schedules, travel days can become stressful before you even check in.
     Bear Limo replaces that chaos with a private chauffeur, a clean luxury
     vehicle, and a precise schedule, so every ride feels calm, predictable, and
-    on your terms.
+    on your terms
   right_heading: Related Resources
   sidebar_links:
     - label: Deep Dive Resource One

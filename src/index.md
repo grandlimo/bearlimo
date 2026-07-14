@@ -1,12 +1,12 @@
 ---
 title: Bear Limousine
 hero:
-  eyebrow: Nationwide Luxury Chauffeur Service
+  eyebrow: Nationwide Luxury Chauffeur Service "BEAR"
   heading: Arrive quietly. Arrive in something worth noticing.
-  subtext: Bear Limo pairs a modern black-fleet — sedans, SUVs, stretch limousines
-    and party buses — with professional chauffeurs across 27 U.S. cities.
-    Airport transfers, weddings, corporate travel, special events. Booked in
-    minutes. Driven with pride.
+  subtext: Bear Limo pairs a modern black fleet — Tesla X, SUVs, Sprinter
+    limousines and party buses — with professional chauffeurs across 27 U.S.
+    cities. Airport transfers, weddings, corporate travel, special events.
+    Booked in minutes. Driven with pride.
   image_jpg: assets/img/hero.jpg
   image_webp: assets/img/hero.webp
   primary_cta:
@@ -18,11 +18,11 @@ hero:
 intro:
   eyebrow: Trending Insights
   heading: Chauffeur-Driven Luxury
-  description: "Experience seamless ground transportation with our fleet of
-    meticulously maintained luxury sedans, SUVs, and stretch limousines. From
+  description: Experience seamless ground transportation with our fleet of
+    meticulously maintained luxury Tesla X, SUVs, and Sprinter limousines. From
     prompt airport transfers to elegant wedding day transport, our professional
     chauffeurs ensure safety, privacy, and unparalleled punctuality. Book your
-    ride today or explore our "
+    ride today or explore our Limo Services.
   link_text: luxury fleet options
   link_url: /fleet
 seo_block:

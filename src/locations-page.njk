@@ -47,16 +47,23 @@ eleventyExcludeFromCollections: true
   <h1 style="margin-bottom: 24px;">{{ location.data.content_blocks.h1 }}</h1>
   
 <figure style="margin: 0 0 40px; border: 1px solid var(--line);">
+ 
+  {% if location.data.content_blocks.hero_image_webp %}
+    <source
+      srcset="/{{ location.data.content_blocks.hero_image_webp }}"
+      type="image/webp">
+  {% endif %}
+
   <img
-  src="/{{ location.data.content_blocks.hero_image }}"
-  alt="Luxury black car service operating in {{ location.data.title }}, {{ location.data.state_abbr }}"
-  width="1920"
-  height="1080"
-  loading="eager"
-  fetchpriority="high"
-  decoding="async"
-  style="width:100%;height:auto;display:block;"
->
+    src="/{{ location.data.content_blocks.hero_image }}"
+    width="1920"
+    height="1080"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    alt="Luxury black car service operating in {{ location.data.title }}, {{ location.data.state_abbr }}"
+    style="width:100%;height:auto;display:block;">
+</picture>
 </figure>
 
   <div class="markdown-body">

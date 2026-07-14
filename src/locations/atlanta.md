@@ -1,13 +1,12 @@
 ---
 title: Atlanta
-
 seo:
   meta_title: Luxury Limo & Black Car Service Albany NY | Bear Limo
   meta_description: Luxury Limo & Black Car Service Albany NY | Bear Limo
   airport_code: Luxury Limo & Black Car Service Albany NY | Bear Limo
   wiki_url: Luxury Limo & Black Car Service Albany NY | Bear Limo
 content_blocks:
-  hero_image: assets/img/hero.jpg
+  hero_image: assets/img/hero-location.webp
   eyebrow: Luxury Limo & Black Car Service Albany NY | Bear Limo
   h1: Luxury Limo & Black Car Service Albany NY | Bear Limo
   body_text: >-
@@ -54,4 +53,12 @@ content_blocks:
 
 
     Reserving your luxury transportation through our platform is fast and simple. Our digital booking engine securely routes and customizes your trip parameters through the trusted Grand Limousine dispatch matrix, providing fully transparent, itemized rates without surprises. Customize your ride parameters or reach out to a reservation agent around the clock to organize premium amenities for your itinerary.
+  hero_image_webp: assets/img/hero-location.jpg
+reviews:
+  - quote: Our executive board required tight coordination for a series of meetings
+      at the Capital Center. The sedan service was flawless.
+    reviewer_name: Corporate Logistics Director
+  - quote: Our executive board required tight coordination for a series of meetings
+      at the Capital Center. The sedan service was flawless.
+    reviewer_name: Corporate Logistics Director
 ---

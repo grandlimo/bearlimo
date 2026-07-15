@@ -4,13 +4,30 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+{# Static pages #}
 {% for page in collections.all %}
   {% if not page.url.startsWith('/locations/')
      and not page.url.startsWith('/services/')
-     and page.url != '/admin/' %}
+     and not page.url.startsWith('/admin/') %}
   <url>
     <loc>https://www.bearlimo.com{{ page.url }}</loc>
   </url>
   {% endif %}
 {% endfor %}
+
+{# Generated location pages #}
+{% for location in collections.locations %}
+<url>
+  <loc>https://www.bearlimo.com/{{ location.fileSlug }}/</loc>
+</url>
+{% endfor %}
+
+{# Generated service pages #}
+{% for service in collections.services %}
+<url>
+  <loc>https://www.bearlimo.com/{{ service.data.slug or service.fileSlug }}/</loc>
+</url>
+{% endfor %}
+
 </urlset>

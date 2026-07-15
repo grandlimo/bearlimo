@@ -5,8 +5,10 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for page in collections.all %}
+  {% if not page.url.startsWith('/locations/') and not page.url.startsWith('/services/') %}
   <url>
     <loc>https://www.bearlimo.com{{ page.url }}</loc>
   </url>
+  {% endif %}
 {% endfor %}
 </urlset>

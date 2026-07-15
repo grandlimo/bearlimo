@@ -1,0 +1,415 @@
+# Decap CMS config for Bear Limo
+# Once deployed (e.g. Netlify), enable Git Gateway + Netlify Identity
+# and Decap will edit these markdown files directly in your repo.
+backend:
+  name: git-gateway
+  branch: main
+
+# Local dev: run `npx decap-server` and set local_backend: true
+local_backend: true
+
+media_folder: "public/assets/img"
+public_folder: "assets/img"
+
+site_url: https://bearlimo.com
+display_url: https://bearlimo.com
+logo_url: assets/img/hero.jpg
+
+collections:
+
+  - name: "pages"
+    label: "Pages"
+    delete: false
+    editor:
+      preview: false
+    files:
+      # =========================================================================
+      # 1. HOME PAGE
+      # =========================================================================
+      - name: "home"
+        label: "Home Page"
+        file: "src/index.md"
+        format: "yaml-frontmatter"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+
+          # --- HERO SECTION ---
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subtext", name: "subtext", widget: "text" }
+              - { label: "Hero JPG Image", name: "image_jpg", widget: "image" }
+              - { label: "Hero WebP Image", name: "image_webp", widget: "image" }
+              - label: "Primary Button"
+                name: "primary_cta"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Link", name: "link", widget: "string" }
+              - label: "Secondary Button"
+                name: "secondary_cta"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Link", name: "link", widget: "string" }
+
+          # --- HERO INTRO SECTION ---
+          - label: "Hero Intro Section"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Trending Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Main Section Heading", name: "heading", widget: "string" }
+              - { label: "Description Paragraph", name: "description", widget: "text" }
+              - { label: "Accent Link Text", name: "link_text", widget: "string" }
+              - { label: "Accent Link URL", name: "link_url", widget: "string" }
+
+          # --- SEO CORE COPY PILLAR SECTION ---
+          - label: "SEO Core Copy Section"
+            name: "seo_block"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow Text", name: "eyebrow", widget: "string" }
+              - { label: "Main Section Heading", name: "heading", widget: "string" }
+              - { label: "Introductory Paragraph", name: "intro_text", widget: "text" }
+              - label: "Value Pillars / Highlights"
+                name: "pillars"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Pillar Title", name: "title", widget: "string" }
+                  - { label: "Pillar Content Description", name: "body", widget: "text" }
+
+          # --- SPLIT ARTICLE SECTION ---
+          - label: "Split Article & Sidebar Section"
+            name: "split_section"
+            widget: "object"
+            fields:
+              - { label: "Main Article Heading", name: "left_heading", widget: "string" }
+              - { label: "Main Article Content", name: "left_body", widget: "markdown" }
+              - { label: "Sidebar Heading", name: "right_heading", widget: "string" }
+              - label: "Sidebar Quick Links"
+                name: "sidebar_links"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Link Label Text", name: "label", widget: "string" }
+                  - { label: "Link Destination URL", name: "url", widget: "string" }
+                  - { label: "Style as Red Urgent Link?", name: "is_accent", widget: "boolean", default: false }
+
+          # --- SERVICES SECTION ---
+          - label: "Services Section"
+            name: "services_section"
+            widget: "object"
+            fields:
+              - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Main Section Heading", name: "heading", widget: "string" }
+              - { label: "Introductory Description", name: "description", widget: "text" }
+              - label: "Service Cards Grid"
+                name: "cards"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Single Letter Icon", name: "icon_letter", widget: "string", hint: "A single capital letter (e.g., A, C, W)" }
+                  - { label: "Service Title", name: "title", widget: "string" }
+                  - { label: "Service Description", name: "body", widget: "text" }
+                  - { label: "Link Destination URL", name: "url", widget: "string",required: false }
+
+          # --- THE FLEET GRID SECTION ---
+          - label: "Fleet Grid Section"
+            name: "fleet_section"
+            widget: "object"
+            fields:
+              - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Main Section Heading", name: "heading", widget: "string" }
+              - label: "Fleet Vehicle List"
+                name: "vehicles"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Vehicle Class Name", name: "name", widget: "string" }
+                  - { label: "Capacity / Specifications Text", name: "specs", widget: "string" }
+                  - { label: "Vehicle Image (JPG)", name: "image_jpg", widget: "image" }
+                  - { label: "Vehicle Image (WebP Variant)", name: "image_webp", widget: "image" }
+
+          # --- COVERAGE LOCATIONS SECTION ---
+          - label: "Coverage Locations Section"
+            name: "coverage_section"
+            widget: "object"
+            fields:
+              - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Main Section Heading", name: "heading", widget: "string" }
+              - { label: "Subheading Paragraph Description", name: "description", widget: "text" }
+              - label: "Active Cities Coverage List"
+                name: "locations"
+                widget: "list"
+                summary: "{{fields.city_name}}"
+                fields:
+                  - { label: "City Name", name: "city_name", widget: "string" }
+                  - { label: "Target URL / Anchor Link", name: "url", widget: "string", required: false,hint: "e.g., /albany/" }
+
+          # --- CTA BAND SECTION ---
+          - label: "Bottom CTA Band"
+            name: "cta_band"
+            widget: "object"
+            fields:
+              - { label: "Small Eyebrow Text", name: "eyebrow", widget: "string" }
+              - { label: "Main Heading", name: "heading", widget: "string" }
+              - { label: "Description Paragraph", name: "description", widget: "text" }
+
+      # =========================================================================
+      # 2. ABOUT US PAGE
+      # =========================================================================
+      - file: "src/about.md"
+        label: "About Us Page"
+        name: "about"
+        format: "yaml-frontmatter"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          
+          # --- SEO Settings ---
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title Override", name: "meta_title", widget: "string" }
+              - { label: "Meta Description", name: "meta_description", widget: "text" }
+
+          # --- Page Content Blocks ---
+          - label: "Page Content Blocks"
+            name: "content_blocks"
+            widget: "object"
+            fields:
+              - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Main Header (H1)", name: "h1", widget: "string" }
+              - { label: "Hero Image", name: "hero_image", widget: "image", default: "assets/img/hero-location.jpg" }
+              - { label: "Body Text Content", name: "body_text", widget: "markdown" }
+
+          # --- Sidebar Core Values ---
+          - label: "Sidebar Core Values"
+            name: "core_values"
+            widget: "list"
+            max: 3
+            summary: "{{fields.value_title}}"
+            fields:
+              - { label: "Value Title", name: "value_title", widget: "string" }
+              - { label: "Value Description", name: "value_desc", widget: "text" }
+
+      # =========================================================================
+      # 3. FLEET PAGE
+      # =========================================================================
+      - file: "src/fleet.md"
+        label: "Fleet Page"
+        name: "fleet"
+        format: "yaml-frontmatter"
+        fields:
+          - { label: "Title", name: "title", widget: "hidden", default: "Fleet" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "fleet.njk" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/fleet/" }
+          
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title", name: "meta_title", widget: "string" }
+              - { label: "Meta Description", name: "meta_description", widget: "text" }
+              
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "H1 Heading", name: "h1", widget: "string" }
+              - { label: "Subtext Description", name: "text", widget: "text" }
+
+          - label: "Vehicles List"
+            name: "fleet_list"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "Vehicle Class Name", name: "name", widget: "string" }
+              - { label: "Passenger Count Text", name: "passengers", widget: "string", hint: "e.g., 1–3 passengers" }
+              - { label: "Example Models/Features", name: "models", widget: "string", hint: "e.g., Mercedes-Benz S-Class" }
+              - { label: "Starting Price", name: "price", widget: "string", hint: "e.g., From $85/hr" }
+              - { label: "Vehicle Image Asset Path", name: "image", widget: "string", hint: "Provide path without ext name like assets/img/fleet-sedan" }
+              - { label: "Image Alt Text", name: "alt", widget: "string" }
+
+      # =========================================================================
+      # 4. CONTACT PAGE
+      # =========================================================================
+      # =========================================================================
+      # 4. CONTACT PAGE
+      # =========================================================================
+      - file: "src/contact.md"
+        label: "Contact Page"
+        name: "contact"
+        format: "yaml-frontmatter"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          
+          # --- SEO Settings ---
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta Title Override", name: "meta_title", widget: "string" }
+              - { label: "Meta Description", name: "meta_description", widget: "text" }
+
+
+  - name: "services"
+    label: "Service Pages"
+    folder: "src/services"
+    create: true
+    # Tells Decap to name the markdown file explicitly based on the slug field value
+    slug: "{{title}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    fields:
+      - { label: "Menu & Header Title", name: "title", widget: "string", hint: "What displays in the menu (e.g., Car Service)" }
+      - { label: "URL Slug",required: false, name: "slug", widget: "string", hint: "The clean URL string all lowercase with hyphens (e.g., car-service)" }
+      
+      # --- SEO Settings ---
+      - label: "SEO Settings"
+        name: "seo"
+        widget: "object"
+        fields:
+          - { label: "Meta Title Override", name: "meta_title", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "text" }
+          
+      # --- Page Content Blocks ---
+      - label: "Page Content Blocks"
+        name: "content_blocks"
+        widget: "object"
+        fields:
+          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Main Header (H1)", name: "h1", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", default: "assets/img/hero.jpg" }
+          - { label: "Body Text Content", name: "body_text", widget: "markdown", minimal: true }
+
+      # --- Sidebar Testimonials Array ---
+      - label: "Sidebar Testimonials Array"
+        name: "reviews"
+        widget: "list"
+        max: 3
+        summary: "{{fields.reviewer_name}}"
+        fields:
+          - { label: "Review Quote", name: "quote", widget: "text" }
+          - { label: "Reviewer Name & Designation", name: "reviewer_name", widget: "string" }
+
+  
+  
+  - name: "locations"
+    label: "City Landing Pages"
+    folder: "src/locations" # Where raw markdown files will be saved
+    create: true # Allows adding new cities seamlessly
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    fields:
+      - { label: "City Name", name: "title", widget: "string", hint: "e.g., Albany, Atlanta, Houston" }
+     
+      
+      # --- SEO Metadata ---
+      - label: "SEO Settings"
+        name: "seo"
+        widget: "object"
+        fields:
+          - { label: "Meta Title Override", name: "meta_title", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "text" }
+          
+          - { label: "Wikipedia URL Reference", name: "wiki_url", widget: "string", hint: "Used for structured Schema validation" }
+
+      # --- Main Layout Body Content ---
+      # --- Main Layout Body Content ---
+     # --- Main Layout Body Content ---
+      - label: "Page Main Layout Content"
+        name: "content_blocks"
+        widget: "object"
+        fields:
+          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Main Header (H1)", name: "h1", widget: "string" }
+          - { label: "Hero Body Image (JPG)", name: "hero_image", widget: "image", default: "assets/img/hero-location.jpg" }
+          - { label: "Hero Body Image (WebP)", name: "hero_image_webp", widget: "image",default: "assets/img/hero-location.webp"}
+          
+          # --- Clean Markdown Editor Box ---
+          - label: "Introductory Body Paragraphs"
+            name: "body_text"
+            widget: "markdown"
+            minimal: true          # Removes complex visual formatting bars to encourage clean copy
+            buttons: ["heading-two", "bold", "italic", "link", "bulleted-list", "numbered-list"] # Strips out weird widget embeds  # Force the CMS to stay in raw Markdown view to protect your ## headings!
+          
+    
+      # --- Sidebar Editorial Testimonials ---
+      - label: "Sidebar Editorial Reviews"
+        name: "reviews"
+        widget: "list"
+        max: 3
+        summary: "{{fields.reviewer_name}}"
+        fields:
+          - { label: "Review Text Quote", name: "quote", widget: "text" }
+          - { label: "Reviewer Name & Designation", name: "reviewer_name", widget: "string" }                                
+
+ 
+
+   
+ 
+  # --- GLOBAL SITE SETTINGS ---
+  - name: "settings_collection"
+    label: "Site Configurations"
+    delete: false # Prevents the client from deleting your settings file
+    files:
+      - file: "src/_data/settings.json"
+        label: "Site Settings & Navigation"
+        name: "settings"
+        format: "json"
+        fields:
+          # ==========================================
+          # NEW: LOGO & IDENTITY SETTINGS
+          # ==========================================
+          - label: "Site Identity & Logos"
+            name: "identity"
+            widget: "object"
+            fields:
+              - { label: "Main Header Logo Image", name: "logo", widget: "image", required: false, hint: "Upload a transparent PNG or SVG logo file" }
+              - { label: "Logo Alt Text Description", name: "logo_alt", widget: "string", default: "Bear Limo Logo", hint: "Crucial for SEO and screen-readers (e.g., Bear Limo — Nationwide Luxury Chauffeur Network)" }
+
+          # ==========================================
+          # 1. TOP UTILITY BAR SETTINGS
+          # ==========================================
+          - label: "Top Utility Bar Settings"
+            name: "top_bar"
+            widget: "object"
+            fields:
+              - { label: "Display Phone Number", name: "phone", widget: "string", default: "(404) 424-4499" }
+              - { label: "Display Email Address", name: "email", widget: "string", default: "info@grandlimousine.com" }
+              - { label: "Book Online Button URL", name: "cta_url", widget: "string", default: "https://app.myridesync.com/quote?uid=grandlimousine" }
+
+          # ==========================================
+          # 2. HEADER MAIN NAVIGATION
+          # ==========================================
+          - label: "Header Main Navigation"
+            name: "header_links"
+            widget: "list"
+            summary: "{{fields.label}} -> {{fields.url}}"
+            fields:
+              - { label: "Link Text Label", name: "label", widget: "string" }
+              - { label: "Target URL Path", name: "url", widget: "string", hint: "e.g., /about/, /fleet/, /contact/" }
+
+          # ==========================================
+          # 3. FOOTER COLUMNS
+          # ==========================================
+          - label: "Footer Links Section"
+            name: "footer"
+            widget: "object"
+            fields:
+              - label: "Footer Column (Explore Links)"
+                name: "explore_links"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Link Text Label", name: "label", widget: "string" }
+                  - { label: "Target URL Path", name: "url", widget: "string" }
+   

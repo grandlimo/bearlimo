@@ -47,12 +47,18 @@ seo_block:
 split_section:
   left_heading: Why Bear Luxury Limo Service Is the Smartest Way to Travel to the
     Airport and Beyond
-  left_body: Getting to and from the airport should not feel like the hardest part
-    of your trip. Between traffic, parking, unpredictable rideshares, and tight
-    flight schedules, travel days can become stressful before you even check in.
-    Bear Limo replaces that chaos with a private chauffeur, a clean luxury
-    vehicle, and a precise schedule, so every ride feels calm, predictable, and
-    on your terms
+  left_body: >-
+    Bear Limo provides 24/7 private black car and [limo
+    service](https://www.grandlimousine.com/) for airport transfers, corporate
+    travel, and special events, with guaranteed on‑time pickups, flight
+    tracking, and professional chauffeurs in clean, luxury sedans, SUVs, and
+    stretch limousines. Every ride includes flat‑rate pricing confirmed at
+    booking, meet‑and‑greet service at major U.S. airports, and door‑to‑door
+    comfort so you never worry about parking, traffic, or unreliable rideshares
+    again.
+
+
+    Since 2007, Bear Limo has operated a vetted, professional livery network in 27 U.S. cities, delivering consistent standards, local dispatch, and discreet service for executives, families, and event planners. Whether you need a single airport run or a multi‑vehicle wedding or conference fleet, you get transparent, itemized billing, real‑time flight and trip monitoring, and a dedicated team that keeps every itinerary on schedule.
   right_heading: Related Resources
   sidebar_links:
     - label: Deep Dive Resource One

@@ -1,5 +1,5 @@
 ---
-title: Limousine Service
+title: Limo Service
 slug: limo-service
 seo:
   meta_title: Premium Limo Service & Black Car Transportation | Bear Limo

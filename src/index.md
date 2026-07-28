@@ -1,5 +1,5 @@
 ---
-title: Bear Limo | Luxury Limo & Airport Black Car Service
+title: Bear Limousine
 hero:
   eyebrow: Premium Limo & Black Car Service "BEAR"
   heading: Bear Limo Service & 24/7 Airport Transportation

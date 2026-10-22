@@ -1,18 +1,19 @@
 ---
 title: Macon
 seo:
-  meta_title: Luxury Limo & Black Car Service Albany NY | Bear Limo
+  meta_title: Luxury Limo & Black Car Service Macon | Bear Limo
   meta_description: >
-    Premium corporate black car service, luxury airport transfers to ALB, and
+    Premium corporate black car service, luxury airport transfers to Macon, and
     premium chauffeured transportation strictly in Albany, NY. Book your ride
     online.
   airport_code: ALB
-  wiki_url: https://en.wikipedia.org/wiki/Albany,_New_York
+  wiki_url: https://en.wikipedia.org/wiki/Macon,_GA
 content_blocks:
-  eyebrow: Chauffeur Services — Albany NY
-  h1: Luxury Chauffeur & Black Car Service in Albany, NY
+  eyebrow: Chauffeur Services - Macon, GA
+  h1: Luxury Chauffeur & Black Car Service in Macon, GA
   body_text: >-
     ## Professional Ground Transport Built Around Your Timeline
+
 
     Navigating New York's state capital demands absolute precision. Book a professional Albany limousine and black car service for your next airport transfer, hourly corporate rental, single ride to downtown executive offices, or private event. From high-profile meetings near the State Capitol Building to seamless logistics for local conferences, our localized network minimizes travel friction within the city limits of Albany.
 
@@ -20,7 +21,7 @@ content_blocks:
     We closely monitor commercial and private arrivals to guarantee timely execution for point-to-point transfers or hourly drop-offs across the city. Whether you require a pristine sedan, a spacious executive SUV, or a classic stretch limousine, our dispatch coordinates your arrival seamlessly.
 
 
-    ## Albany International Airport (ALB) Luxury Transfers
+    ## M Luxury Transfers
 
 
     How do you secure a reliable, premium private driver from Albany International Airport? Arrange an ALB arrival or drop-off with our prompt, luxurious black car solutions. We remove the stress from commercial aviation travel by offering flight-tracked pickups, dedicated luggage assistance, and direct curbside executive town car options to destinations throughout Albany, including Center Square, Pine Hills, and the core business districts.
